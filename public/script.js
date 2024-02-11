@@ -10,14 +10,16 @@ shapes.forEach(shape => {
 })
 
 function paste(ele,x,y){
-    let field = document.createElement("svg");
-    field.style.position= "absolute";
+    let field = document.createElementNS('http://www.w3.org/2000/svg',"svg");
     field.setAttribute("width",100);
     field.setAttribute("height",100);
-    let shape = document.createElement(`${ele}`);
+    let shape = document.createElementNS('http://www.w3.org/2000/svg',`${ele}`);
     shape.setAttribute("width",100);
     shape.setAttribute("height",100);
-    shape.style.fill = "rgb(0, 255, 191)";
+    shape.setAttribute("fill","rgb(0,255,191");
+    field.style.position = "absolute";
+    field.style.left = "50px";
+
     field.appendChild(shape);
     canvas.appendChild(field);
 }
