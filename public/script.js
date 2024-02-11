@@ -1,12 +1,16 @@
 const shapes = [...document.querySelectorAll("li")];
 const canvas = document.querySelector("#canvas");
+const btn = document.querySelector("#btn");
 const rect = canvas.getBoundingClientRect();
 const CANVAS_X = rect.x;
 const CANVAS_Y = rect.y;
 const OFFSET = 50;
 // console.log(rect);
 
-
+btn.addEventListener("click", () => {
+    // location.reload();
+    canvas.innerHTML = "";
+})
 
 shapes.forEach(shape => {
     shape.addEventListener("dragend", e => {
