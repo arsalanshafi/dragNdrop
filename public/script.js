@@ -32,8 +32,8 @@ function paste(ele,x,y){
 
     switch (ele){
         case "rect":
-            figure.setAttribute("width",100);
-            figure.setAttribute("height",100);
+            figure.setAttribute("width",Math.random()*(100-20)+20);
+            figure.setAttribute("height",Math.random()*(100-20)+20);
             break;
         case "circle":
             figure.setAttribute("cx",50);
@@ -47,7 +47,7 @@ function paste(ele,x,y){
             console.log("default");
             break;
     }
-    figure.setAttribute("fill",`rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`);
+    figure.setAttribute("fill",`rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},${Math.random()+0.4})`);
     field.style.left = `${(x-CANVAS_X)-OFFSET}px`;
     field.style.top = `${(y-CANVAS_Y)-OFFSET}px`;
     field.appendChild(figure);
